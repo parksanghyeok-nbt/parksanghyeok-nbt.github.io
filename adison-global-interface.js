@@ -152,7 +152,7 @@ function getSdkVersion() {
     }
 }
 function getSdkVersionResult(isSuccess, result) {
-    alert(result.os_version)
+    alert(result.sdk_version)
 }
 
 
