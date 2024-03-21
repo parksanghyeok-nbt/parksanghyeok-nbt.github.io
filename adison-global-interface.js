@@ -51,110 +51,246 @@ function openExternal(uriString, options) {
 }
 
 function getDeviceModel() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        console.log(SharedWeb.getDeviceModel('getDeviceModelResult'))
-       return SharedWeb.getDeviceModel()
+        window.SharedWeb.getDeviceModel(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getDeviceModelResult(isSuccess, result) {
-    alert(result.device_model)
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
 }
 
 function getUid() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getUid('getUidResult')
+        window.SharedWeb.getUid(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getUidResult(isSuccess, result) {
-    alert(result.uid)
-}
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
 
 function getNUid() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getNUid('getNUidResult')
+        window.SharedWeb.getNUid(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getNUidResult(isSuccess, result) {
-    alert(result.n_uid)
-}
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
 
 function getAdvertisingId() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getAdvertisingId('getAdvertisingIdResult')
+        window.SharedWeb.getAdvertisingId(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getAdvertisingIdResult(isSuccess, result) {
-    alert(result.advertising_id)
-}
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
+
 
 function getNAdvertisingId() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getNAdvertisingId('getNAdvertisingIdResult')
+        window.SharedWeb.getNAdvertisingId(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getNAdvertisingIdResult(isSuccess, result) {
-    alert(result.n_advertising_id)
-}
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
 
 function getAppVersion() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getAppVersion('getAppVersionResult')
+        window.SharedWeb.getAppVersion(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getAppVersionResult(isSuccess, result) {
-    alert(result.app_version)
-}
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
+
 
 function getOSVersion() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getOSVersion('getOSVersionResult')
+        window.SharedWeb.getOSVersion(rand_1);
     } else {
         // iOS 호출
-        return ""
+
     }
-}
-function getOSVersionResult(isSuccess, result) {
-    alert(result.os_version)
-}
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
 
 function getSdkVersion() {
+    var _this = this;
+    var rand_1 = 'asyncJava_' + Math.floor(Math.random() * 1000000);
+    window[rand_1] = {};
+    // func called from android
+    window[rand_1].callback = function (isSuccess, result) {
+        console.log("rand", rand_1, isSuccess, result);
+        if (isSuccess)
+            window[rand_1].resolve(result);
+        else
+            window[rand_1].reject(result);
+        delete window[rand_1]; // clean up
+    };
+
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getSdkVersion('getSdkVersionResult')
+        window.SharedWeb.getSdkVersion(rand_1);
     } else {
         // iOS 호출
-        return ""
-    }
-}
-function getSdkVersionResult(isSuccess, result) {
-    alert(result.sdk_version)
-}
 
+    }
+
+    return new Promise(function (resolve, reject) {
+        window[rand_1].resolve = function (data) {
+            resolve(data);
+        };
+        window[rand_1].reject = function (err) { return reject(err); };
+    });
+};
 
 function setTitle(title) {
     const platform = getPlatform()
@@ -202,3 +338,4 @@ function onUserAction(event, params) {
         // iOS 호출
     }
 }
+
