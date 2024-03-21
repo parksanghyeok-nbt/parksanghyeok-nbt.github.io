@@ -50,17 +50,6 @@ function openExternal(uriString, options) {
     }
 }
 
-//function getDeviceModel() {
-//    const platform = getPlatform()
-//    if(platform == androidPlatform) {
-//        console.log(SharedWeb.getDeviceModel())
-//       return SharedWeb.getDeviceModel()
-//    } else {
-//        // iOS 호출
-//        return ""
-//    }
-//}
-
 function getDeviceModel() {
     const platform = getPlatform()
     if(platform == androidPlatform) {
@@ -78,42 +67,94 @@ function getDeviceModelResult(isSuccess, result) {
 function getUid() {
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getUid()
+        return SharedWeb.getUid('getUidResult')
     } else {
         // iOS 호출
         return ""
     }
+}
+function getUidResult(isSuccess, result) {
+    alert(result.uid)
 }
 
 function getNUid() {
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getNUid()
+        return SharedWeb.getNUid('getNUidResult')
     } else {
         // iOS 호출
         return ""
     }
+}
+function getNUidResult(isSuccess, result) {
+    alert(result.n_uid)
 }
 
 function getAdvertisingId() {
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getAdvertisingId()
+        return SharedWeb.getAdvertisingId('getAdvertisingIdResult')
     } else {
         // iOS 호출
         return ""
     }
+}
+function getAdvertisingIdResult(isSuccess, result) {
+    alert(result.advertising_id)
 }
 
 function getNAdvertisingId() {
     const platform = getPlatform()
     if(platform == androidPlatform) {
-        return SharedWeb.getNAdvertisingId()
+        return SharedWeb.getNAdvertisingId('getNAdvertisingIdResult')
     } else {
         // iOS 호출
         return ""
     }
 }
+function getNAdvertisingIdResult(isSuccess, result) {
+    alert(result.n_advertising_id)
+}
+
+function getAppVersion() {
+    const platform = getPlatform()
+    if(platform == androidPlatform) {
+        return SharedWeb.getAppVersion('getAppVersionResult')
+    } else {
+        // iOS 호출
+        return ""
+    }
+}
+function getAppVersionResult(isSuccess, result) {
+    alert(result.app_version)
+}
+
+function getOSVersion() {
+    const platform = getPlatform()
+    if(platform == androidPlatform) {
+        return SharedWeb.getOSVersion('getOSVersionResult')
+    } else {
+        // iOS 호출
+        return ""
+    }
+}
+function getOSVersionResult(isSuccess, result) {
+    alert(result.os_version)
+}
+
+function getSdkVersion() {
+    const platform = getPlatform()
+    if(platform == androidPlatform) {
+        return SharedWeb.getSdkVersion('getSdkVersionResult')
+    } else {
+        // iOS 호출
+        return ""
+    }
+}
+function getSdkVersionResult(isSuccess, result) {
+    alert(result.os_version)
+}
+
 
 function setTitle(title) {
     const platform = getPlatform()
